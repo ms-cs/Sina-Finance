@@ -10,8 +10,9 @@ from scrapy_redis.spiders import RedisSpider
 
 class XinlangSpider(RedisSpider):
     name = 'xinlang'
-    #redis_key = 'myspider:start_urls'
+    #redis_key = 'myspider:start_urls'  # 可以用redis实现分布式，介绍网页https://github.com/rmax/scrapy-redis
     start_urls = ['http://finance.sina.com.cn/roll/#pageid=384&lid=2519&k=&num=50&page=1']
+    # 这个网址是新浪财经feed流的网址，可以通过浏览器‘检查--NetWork’或者用Fiddler抓包得到，这个网址直接返回很多内容，包括全部新闻的网址
     # allowed_domains = ['http://finance.sina.com.cn/']
 
 
