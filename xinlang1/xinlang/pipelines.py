@@ -29,14 +29,6 @@ class XinlangPipeline(object):
             return item
         except:
             # Rollback in case there is any error
-            print("""
-            
-            
-            mysql-------error
-            
-            
-            
-            """)
             self.conn.rollback()
 
 
